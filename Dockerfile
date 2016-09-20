@@ -1,6 +1,5 @@
-FROM golang:1.6.2-wheezy
+FROM golang:1.7.1-alpine
 MAINTAINER youyo
 
-RUN apt-get update && \
-apt-get install -y zip && \
-go get -v github.com/Masterminds/glide
+RUN apk add --no-cache git && \
+go get -v github.com/kardianos/govendor
